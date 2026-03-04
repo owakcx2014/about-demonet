@@ -4,115 +4,125 @@
     <meta charset="UTF-8">
     <title>About D3M0N3T v5.4</title>
     <style>
-        /* تنسيق الخلفية والألوان العامة */
         body {
-            background-color: #0f0f0f; /* أسود داكن جداً */
+            background-color: #0f0f0f;
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            padding: 20px;
             margin: 0;
-            overflow: hidden;
-        }
-
-        /* تنسيق شعار D5 */
-        .logo-container {
-            position: relative;
-            margin-bottom: 20px;
+            overflow-x: hidden;
         }
 
         .logo {
-            width: 180px; /* حجم الشعار */
-            height: 180px;
-            border-radius: 30px; /* زوايا منحنية */
-            box-shadow: 0 0 30px rgba(138, 43, 226, 0.6); /* توهج بنفسجي */
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
             border: 2px solid #8a2be2;
-            transition: transform 0.3s ease;
+            margin-bottom: 10px;
         }
 
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        /* النصوص */
         h1 {
             color: #a020f0;
-            font-size: 2.5em;
-            margin: 10px 0;
-            text-shadow: 2px 2px 10px rgba(160, 32, 240, 0.5);
+            font-size: 1.8em;
+            margin: 5px 0;
+            text-shadow: 0 0 10px rgba(160, 32, 240, 0.5);
         }
 
-        .version {
-            color: #888;
-            font-size: 1em;
-            font-weight: bold;
+        .version { color: #666; font-size: 0.8em; margin-bottom: 15px; }
+
+        /* فقرة "عن المشروع" */
+        .about-section {
+            width: 90%;
+            max-width: 550px;
+            background: rgba(138, 43, 226, 0.05);
+            border: 1px dashed #8a2be2;
+            padding: 15px;
+            border-radius: 10px;
             margin-bottom: 20px;
+            text-align: center;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #eee;
         }
 
-        .description {
-            max-width: 500px;
-            line-height: 1.6;
-            color: #ccc;
-            background: rgba(255, 255, 255, 0.05);
+        /* حاوية التعليمات */
+        .instruction-container {
+            width: 95%;
+            max-width: 550px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.02);
             padding: 20px;
             border-radius: 15px;
-            border-right: 4px solid #8a2be2;
-            text-align: center;
+            border: 1px solid rgba(138, 43, 226, 0.2);
         }
 
-        /* تذييل الصفحة وحقوق النشر */
-        .footer {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 0.85em;
-            color: #666;
-        }
+        .lang-side { padding: 5px; }
+        .en-side { direction: ltr; text-align: left; border-left: 1px solid #333; padding-left: 15px; }
+        
+        h3 { color: #8a2be2; font-size: 1em; margin-bottom: 10px; border-bottom: 1px solid #8a2be2; display: inline-block; }
 
-        .copyright-text {
-            color: #8a2be2;
-            font-weight: bold;
-        }
+        ul { list-style: none; padding: 0; font-size: 0.85em; color: #ccc; }
+        li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
 
-        .btn {
+        .icon-hint { font-size: 1.3em; width: 25px; text-align: center; }
+
+        .btn-discord {
             margin-top: 20px;
-            padding: 12px 30px;
+            padding: 10px 25px;
             background-color: #8a2be2;
             color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
             text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        .btn:hover {
-            background-color: #a020f0;
-        }
+        .btn-discord:hover { background-color: #a020f0; box-shadow: 0 0 15px #8a2be2; }
     </style>
 </head>
 <body>
 
-    <div class="logo-container">
-        <img src="D5.png" alt="D3M0N3T Logo" class="logo">
+    <img src="D5.png" alt="Logo" class="logo">
+    <h1>D3M0N3T</h1>
+    <div class="version">V 5.4</div>
+
+    <div class="about-section">
+        <strong>حول المشروع | About</strong><br>
+        نحن فريق متخصص في تطوير أدوات الـ Exploiting المتقدمة. يهدف مشروع <strong>D3M0N3T</strong> لتوفير أداء خارق مع واجهة عصرية وسهلة الاستخدام للجميع.<br>
+        <span dir="ltr" style="font-size: 0.9em; color: #bbb;">We are a team specialized in advanced exploiting tools. D3M0N3T aims to provide top-tier performance with a modern UI.</span>
     </div>
 
-    <h1>D3M0N3T PROJECT</h1>
-    <div class="version">إصدار 5.4</div>
+    <div class="instruction-container">
+        <div class="lang-side">
+            <h3>📖 التعليمات</h3>
+            <ul>
+                <li><span class="icon-hint">🔗</span> اضغط للربط (Attach) مع روبلوكس.</li>
+                <li><span class="icon-hint">📤</span>  رفع ملف سكربت للمحرر أو لصقه.</li>
+                <li><span class="icon-hint">🗑</span> مسح محتوى المحرر تماماً.</li>
+                <li><span class="icon-hint">🚀</span> تنفيذ السكربت (Execute).</li>
+            </ul>
+        </div>
 
-    <div class="description">
-        مرحباً بك في مشروع <strong>D3M0N3T</strong>. 
-        نحن فريق متخصص في الـexploiting. هذا البرنامج صمم ليوفر لك بيئة عمل سريعة وآمنة لتنفيذ السكربتات البرمجية باستخدام XenoUI
-
-    <a href="https://discord.com/invite/QhZsPzpp" class="btn">انضم إلى مجتمعنا على Discord</a>
-
-    <div class="footer">
-        <p>© <span class="copyright-text">2026 D3M0N3T Team</span>. جميع الحقوق محفوظة.</p>
+        <div class="lang-side en-side">
+            <h3>📖 How to use</h3>
+            <ul>
+                <li><span class="icon-hint">🔗</span> Click to Attach with roblox.</li>
+                <li><span class="icon-hint">📤</span> Open/Upload script file or paste it.</li>
+                <li><span class="icon-hint">🗑</span> Clear the code editor.</li>
+                <li><span class="icon-hint">🚀</span> Run the script (Execute).</li>
+            </ul>
+        </div>
     </div>
+
+    <a href="https://discord.com/invite/QhZsPzpp" class="btn-discord">Discord Server</a>
+
+    <div style="margin-top: 20px; font-size: 0.7em; color: #444;">© 2026 D3M0N3T PROJECT</div>
 
 </body>
 </html>
