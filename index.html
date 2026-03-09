@@ -2,190 +2,115 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>D3M0N3T</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="D5.png">
+    <title>D3M0N3T | Version 7.2</title>
     <style>
         :root {
-            --main-purple: #8a2be2;
-            --dark-bg: #0c0c0c;
-            --card-bg: #151515;
-            --text-gray: #b0b0b0;
+            --primary: #8a2be2;
+            --bg: #0a0a0a;
+            --card: #121212;
+            --accent: #a855f7;
+            --success: #22c55e;
         }
-
         body {
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 30px;
-        }
-
-        /* حاوية اللوجو بأسلوب Dex */
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 18px;
-            border: 1px solid var(--main-purple);
-            box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            letter-spacing: 2px;
-            margin: 10px 0 5px 0;
-            color: #fff;
-        }
-
-        .version-badge {
-            background: var(--main-purple);
-            font-size: 0.7rem;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
-        /* فقرة "عن" بأسلوب الصندوق العائم */
-        .about-box {
-            width: 85%;
-            max-width: 500px;
-            background: var(--card-bg);
-            border: 1px solid #222;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        /* قائمة التعليمات - اقتباس من أسلوب Dex Hub في عرض الميزات */
-        .dex-container {
-            width: 85%;
-            max-width: 500px;
-            background: var(--card-bg);
-            border-radius: 8px;
-            border: 1px solid #222;
-            overflow: hidden;
-        }
-
-        .dex-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            border-bottom: 1px solid #222;
-            transition: background 0.2s;
-        }
-
-        .dex-item:last-child { border-bottom: none; }
-        .dex-item:hover { background: #1a1a1a; }
-
-        .dex-icon {
-            font-size: 1.2rem;
-            width: 35px;
-            text-align: center;
-            margin-left: 10px; /* للمحاذاة العربية */
-        }
-
-        .dex-text {
-            flex-grow: 1;
-            font-size: 0.85rem;
-        }
-
-        .dex-text b { color: var(--main-purple); }
-
-        /* الأزرار بأسلوب Dex (أزرار عريضة ومنظمة) */
-        .footer-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            width: 85%;
-            max-width: 500px;
-        }
-
-        .dex-btn {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 8px;
-            transition: 0.3s;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
-
-        .btn-discord { background: #5865f2; color: #fff; }
-        .btn-github { background: #24292e; color: #fff; border: 1px solid #444; }
+        .container {
+            text-align: center;
+            background: var(--card);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #222;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
+        }
+        .logo { width: 100px; filter: drop-shadow(0 0 10px var(--primary)); }
+        h1 { margin: 15px 0 5px; font-size: 2.2rem; }
+        .version-badge {
+            background: var(--primary);
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+        .desc { color: #888; margin-bottom: 25px; }
         
-        .dex-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        /* قسم الإحصائيات الجديد */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-item {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+        .stat-item h4 { color: var(--accent); margin: 0 0 5px; font-size: 1rem; }
+        .stat-item p { margin: 0; font-size: 0.85rem; color: #bbb; }
 
-        .en-font { direction: ltr; font-family: 'Consolas', monospace; color: var(--text-gray); font-size: 0.8rem; }
+        .main-btn {
+            display: block;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-bottom: 10px;
+        }
+        .main-btn:hover { background: var(--accent); transform: translateY(-2px); }
+
+        .features-list {
+            text-align: right;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        .features-list li { margin-bottom: 8px; list-style: none; }
+        .features-list li::before { content: "•"; color: var(--primary); margin-left: 8px; font-weight: bold; }
     </style>
 </head>
 <body>
-
-    <div class="header">
-        <img src="D5.png" alt="D3M0N3T" class="logo">
-        <h1>D3M0N3T <span class="version-badge">V6.4</span></h1>
-    </div>
-
-    <div class="about-box">
-        <b>حول المشروع | ABOUT</b><br>
-        فريق متخصص في تطوير أدوات الـ Exploiting. نوفر أداءً خارقاً وواجهة عصرية.<br>
-        <span class="en-font">Advanced exploiting tools provider. High performance, modern UI.</span>
-    </div>
-
-    <div class="dex-container">
-        <div class="dex-item">
-            <div class="dex-icon">🔗</div>
-            <div class="dex-text">
-                <b>Attach:</b> الربط مع روبلوكس للحقن.<br>
-                <span class="en-font">Inject and link with Roblox.</span>
+    <div class="container">
+        <img src="D5.png" alt="Logo" class="logo">
+        <h1>D3M0N3T <span class="version-badge">V7.2</span></h1>
+        <p class="desc">السرعة، الخفة، والسيطرة الكاملة في ملف واحد.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h4>⚡ أداء صاروخي</h4>
+                <p>أسرع بـ 3 أضعاف من الإصدارات السابقة.</p>
+            </div>
+            <div class="stat-item">
+                <h4>🧠 ذاكرة ذكية</h4>
+                <p>استهلاك مستقر لا يتعدى 135MB.</p>
             </div>
         </div>
-        <div class="dex-item">
-            <div class="dex-icon">📤</div>
-            <div class="dex-text">
-                <b>Upload:</b> رفع ملف سكربت أو لصقه.<br>
-                <span class="en-font">Open script file or paste code.</span>
-            </div>
-        </div>
-        <div class="dex-item">
-            <div class="dex-icon">🗑</div>
-            <div class="dex-text">
-                <b>Clear:</b> مسح محرر النصوص بالكامل.<br>
-                <span class="en-font">Wipe the text editor content.</span>
-            </div>
-        </div>
-        <div class="dex-item">
-            <div class="dex-icon">🚀</div>
-            <div class="dex-text">
-                <b>Execute:</b> تنفيذ السكربت داخل اللعبة.<br>
-                <span class="en-font">Run the script in-game.</span>
-            </div>
+
+        <ul class="features-list">
+            <li>دعم كامل لـ .NET Framework 8.0.</li>
+            <li>نظام "زر اللصق" الذكي لتوفير الوقت.</li>
+            <li>حقن مباشر (Native Injection) بدون ملفات زائدة.</li>
+            <li>واجهة WebView2 متطورة وفائقة الاستجابة.</li>
+        </ul>
+
+        <a href="https://github.com/owakcx2014/D3M0N3T/releases/download/v7.2_stable/D3M0N3T_7.2_Stable.zip" class="main-btn">⬇️ تحميل الإصدار المدمج (Single EXE)</a>
+        
+        <div style="margin-top: 20px; font-size: 0.8rem; color: #444;">
+            نظام حماية متطور | صنع بكل حب وبرمجة وخفة
         </div>
     </div>
-
-    <div class="footer-buttons">
-        <a href="https://discord.com/invite/QhZsPzpp" target="_blank" class="dex-btn btn-discord">Discord</a>
-        <a href="https://github.com/owakcx2014/D3M0N3T" target="_blank" class="btn btn-github">
-            <svg height="16" width="16" viewBox="0 0 16 16" fill="white"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            ⭐ Star
-        </a>
-    </div>
-
-    <div style="margin-top: 30px; font-size: 3rem; color: #333;">D3M0N3T FRAMEWORK © 2026</div>
-
 </body>
 </html>
-
